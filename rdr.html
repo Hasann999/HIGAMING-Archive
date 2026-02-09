@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HIGAMING Archive | Red Dead Redemption</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rye&family=Special+Elite&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0; padding: 0;
+            background-color: #000; color: #e51837; /* Karakteristik RDR Kırmızısı */
+            font-family: 'Special Elite', system-ui; overflow-x: hidden;
+        }
+
+        header { text-align: center; padding: 60px 20px; }
+        header h1 { 
+            font-family: 'Rye', cursive; 
+            color: #e51837; 
+            font-size: 5rem; 
+            margin: 0; 
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
+        }
+
+        nav { text-align: center; margin-bottom: 40px; }
+        nav a { font-family: 'Cinzel', serif; color: #fff; text-decoration: none; margin: 0 25px; font-size: 0.9rem; letter-spacing: 2px; transition: 0.3s; }
+        nav a:hover { color: #e51837; }
+
+        .character-section {
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            border-bottom: 1px solid rgba(229, 24, 55, 0.1);
+        }
+
+        /* Arka Planlar (Souls stilinde soluk) */
+        .arthur-section { background-image: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('arthurbg.jpg'); }
+        .john-section { background-image: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('johnbg.jpg'); }
+        .jack-section { background-image: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('jackbg.jpg'); }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 700px;
+            padding: 60px 10%;
+            max-width: 1500px;
+            margin: 0 auto;
+            gap: 80px;
+        }
+
+        .content { flex: 1.2; }
+        .character-image { flex: 1; display: flex; justify-content: center; }
+
+        .content h2 { 
+            font-family: 'Rye', cursive; 
+            font-size: 3.5rem; 
+            margin-bottom: 25px; 
+            text-shadow: 2px 2px 5px rgba(0,0,0,1);
+        }
+
+        .content p { 
+            line-height: 1.8; 
+            font-size: 1.4rem; 
+            text-align: justify;
+            text-shadow: 1px 1px 3px rgba(0,0,0,1); /* Yazılarda siyah gölge */
+        }
+
+        .character-image img {
+            width: 500px;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 10px 10px 40px rgba(0, 0, 0, 1); /* Çizimlerde siyah gölge */
+            transition: 0.4s;
+        }
+
+        #translate-btn { 
+            position: fixed; top: 20px; right: 20px; padding: 10px 18px; 
+            background: rgba(0,0,0,0.7); border: 1px solid #e51837; 
+            color: #e51837; cursor: pointer; z-index: 100; font-family: 'Rye'; 
+        }
+    </style>
+</head>
+<body>
+
+    <button id="translate-btn" onclick="toggleLanguage()">TR / EN</button>
+
+    <header>
+        <h1 id="main-title">Red Dead Redemption</h1>
+    </header>
+
+    <<nav>
+    <a href="index.html" id="nav-home">BACK TO PORTAL</a>
+    <a href="gallery.html" id="nav-gallery">GALLERY</a>
+    <a href="about.html" id="nav-about">ABOUT</a>
+</nav>
+
+    <div class="character-section arthur-section">
+        <div class="container">
+            <div class="character-image">
+                <img src="arthur.jpg" alt="Arthur Morgan">
+            </div>
+            <div class="content">
+                <h2 id="arthur-name">Arthur Morgan</h2>
+                <p id="arthur-desc">Arthur Morgan is the lead enforcer of the Van der Linde gang and a man torn between loyalty and his own changing morality. As the era of outlaws comes to an end, he struggles to find a path toward redemption in a world that no longer wants him. His journey is one of profound tragedy, marked by the loss of his family and the crumbling of his ideals. Despite his rough exterior, Arthur possesses a deep inner conscience that awakens as his time grows short. He remains one of the most complex and beloved figures in the history of the West.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="character-section john-section">
+        <div class="container">
+            <div class="character-image">
+                <img src="john.jpg" alt="John Marston">
+            </div>
+            <div class="content">
+                <h2 id="john-name">John Marston</h2>
+                <p id="john-desc">John Marston is a former outlaw seeking a peaceful life for his family after leaving his violent past behind. However, the ghosts of his old gang and the relentless reach of the law force him back into the saddle. He is a man of few words but immense willpower, determined to protect his wife and son at any cost. John's story is a cycle of sacrifice, showing the heavy price of escaping the life of a gunslinger. His legacy is etched in blood and the hope for a better future for his bloodline.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="character-section jack-section">
+        <div class="container">
+            <div class="character-image">
+                <img src="jack.jpg" alt="Jack Marston">
+            </div>
+            <div class="content">
+                <h2 id="jack-name">Jack Marston</h2>
+                <p id="jack-desc">Jack Marston, the son of John and Abigail, grew up surrounded by the fading echoes of the outlaw life. Though he loved books and sought a different path, the tragedy that befell his father pushed him toward a dark destiny. He represents the final gasp of the Wild West, taking up his father's revolver to settle old scores. Jack's transformation from an innocent boy to a cynical gunslinger marks the official end of an era. His story is the bitter conclusion to the Marston family's long struggle for freedom.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentLang = 'en';
+        const translations = {
+            en: {
+                title: "Outlaws", home: "BACK TO PORTAL", gallery: "GALLERY", about: "ABOUT",
+                arthurName: "Arthur Morgan",
+                arthurDesc: "Arthur Morgan is the lead enforcer of the Van der Linde gang and a man torn between loyalty and his own changing morality. As the era of outlaws comes to an end, he struggles to find a path toward redemption. His journey is one of profound tragedy, marked by the loss of his family and ideals. Despite his rough exterior, Arthur possesses a deep inner conscience. He remains one of the most complex figures in the history of the West.",
+                johnName: "John Marston",
+                johnDesc: "John Marston is a former outlaw seeking a peaceful life for his family after leaving his violent past behind. However, the ghosts of his old gang force him back into the saddle. He is a man of few words but immense willpower, determined to protect his wife and son. John's story is a cycle of sacrifice, showing the heavy price of escaping the life of a gunslinger.",
+                jackName: "Jack Marston",
+                jackDesc: "Jack Marston grew up surrounded by the fading echoes of the outlaw life. Though he sought a different path, the tragedy that befell his father pushed him toward a dark destiny. He represents the final gasp of the Wild West, taking up his father's revolver to settle old scores. His story is the bitter conclusion to the Marston family's struggle."
+            },
+            tr: {
+                title: "Kanun Kaçakları", home: "PORTALA DÖN", gallery: "GALERİ", about: "HAKKIMDA",
+                arthurName: "Arthur Morgan",
+                arthurDesc: "Arthur Morgan, Van der Linde çetesinin baş infazcısı ve sadakat ile kendi değişen ahlakı arasında kalmış bir adamdır. Kanun kaçakları dönemi sona ererken, artık kendisini istemeyen bir dünyada kurtuluşa giden bir yol bulmaya çalışır. Yolculuğu, ailesinin ve ideallerinin kaybıyla damgalanmış derin bir trajedidir. Sert görünüşüne rağmen Arthur, zamanı daraldıkça uyanan derin bir iç vicdana sahiptir.",
+                johnName: "John Marston",
+                johnDesc: "John Marston, şiddet dolu geçmişini geride bıraktıktan sonra ailesi için huzurlu bir hayat arayan eski bir kanun kaçağıdır. Ancak eski çetesinin hayaletleri ve hukukun amansız pençesi onu tekrar eyerin üzerine dönmeye zorlar. Karısını ve oğlunu ne pahasına olursa olsun korumaya kararlı, az ama öz konuşan büyük bir irade adamıdır.",
+                jackName: "Jack Marston",
+                jackDesc: "John ve Abigail'in oğlu olan Jack Marston, kanun kaçacağı hayatının silikleşen yankıları arasında büyüdü. Kitapları sevmesine ve farklı bir yol aramasına rağmen, babasının başına gelen trajedi onu karanlık bir kadere itti. Vahşi Batı'nın son nefesini temsil eden Jack, eski hesapları kapatmak için babasının revolverini eline alır."
+            }
+        };
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'tr' : 'en';
+            document.getElementById('main-title').innerText = translations[currentLang].title;
+            document.getElementById('nav-home').innerText = translations[currentLang].home;
+            document.getElementById('nav-gallery').innerText = translations[currentLang].gallery;
+            document.getElementById('nav-about').innerText = translations[currentLang].about;
+            document.getElementById('arthur-name').innerText = translations[currentLang].arthurName;
+            document.getElementById('arthur-desc').innerText = translations[currentLang].arthurDesc;
+            document.getElementById('john-name').innerText = translations[currentLang].johnName;
+            document.getElementById('john-desc').innerText = translations[currentLang].johnDesc;
+            document.getElementById('jack-name').innerText = translations[currentLang].jackName;
+            document.getElementById('jack-desc').innerText = translations[currentLang].jackDesc;
+        }
+    </script>
+</body>
+</html>

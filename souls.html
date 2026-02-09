@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HIGAMING Archive | Souls</title>
+    <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Cinzel:wght@400;700&family=Lora:ital,wght@0,400;1,500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0; padding: 0;
+            background-color: #000; color: white;
+            font-family: 'Lora', serif; overflow-x: hidden;
+        }
+
+        header { text-align: center; padding: 60px 20px; }
+        header h1 { 
+            font-family: 'UnifrakturMaguntia', cursive; 
+            color: #888888; 
+            font-size: 5rem; 
+            margin: 0; 
+            letter-spacing: 5px;
+        }
+
+        nav { text-align: center; margin-bottom: 40px; }
+        nav a { font-family: 'Cinzel', serif; color: #fff; text-decoration: none; margin: 0 25px; font-size: 0.9rem; letter-spacing: 2px; transition: 0.3s; }
+        nav a:hover { color: #888888; }
+
+        .character-section {
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 700px; /* Bölüm derinliğini artırdık */
+            padding: 60px 10%;
+            max-width: 1500px;
+            margin: 0 auto;
+            gap: 80px;
+        }
+
+        .content { flex: 1.2; }
+        .character-image { flex: 1; display: flex; justify-content: center; align-items: center; }
+
+        .content h2 { font-family: 'Cinzel', serif; font-size: 2.8rem; margin-bottom: 20px; }
+        .content p { line-height: 1.8; font-size: 1.25rem; text-align: justify; }
+
+        /* GÖRSEL ÖLÇEKLENDİRME */
+        .character-image img {
+            width: 550px; /* Genişliği biraz artırdık */
+            height: auto; /* Yükseklik kısıtlamasını kaldırdık, tam boyut! */
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.9);
+            object-fit: contain; /* Kesilmeden tamamının görünmesini garanti eder */
+        }
+
+        /* Temalar */
+        .malenia-section { background-image: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('heligtree.jpg'); color: #FFD700; }
+        .radahn-section { background-image: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('radahnbg.jpg'); color: #FFD700; }
+        .artorias-section { background-image: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('artoriasbg.jpg'); color: #4A90E2; }
+        .sif-section { background-image: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('sifbg.jpg'); color: #FFFFFF; }
+
+        .reverse { flex-direction: row-reverse; }
+        #translate-btn { position: fixed; top: 20px; right: 20px; padding: 10px 18px; background: rgba(0,0,0,0.6); border: 1px solid #fff; color: #fff; cursor: pointer; z-index: 100; font-family: 'Cinzel'; }
+    </style>
+</head>
+<body>
+
+    <button id="translate-btn" onclick="toggleLanguage()">TR / EN</button>
+
+    <header>
+        <h1 id="main-title">Souls</h1>
+    </header>
+
+    <nav>
+    <a href="index.html" id="nav-home">BACK TO PORTAL</a>
+    <a href="gallery.html" id="nav-gallery">GALLERY</a>
+    <a href="about.html" id="nav-about">ABOUT</a>
+</nav>
+
+    <div class="character-section malenia-section">
+        <div class="container">
+            <div class="character-image"><img src="malenia.jpg"></div>
+            <div class="content">
+                <h2 id="malenia-name">Malenia, Blade of Miquella</h2>
+                <p id="malenia-desc">"I am Malenia, Blade of Miquella. And I have never known defeat." <br><br> Born as a twin to Miquella, Malenia is cursed with the Scarlet Rot from within. Despite her decaying body, she became the most fearsome swordswoman in the Lands Between, wielding her prosthetic golden blade with unmatched grace. Her legend reached its peak during the Shattering, where she fought General Radahn to a standstill.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="character-section radahn-section">
+        <div class="container reverse">
+            <div class="character-image"><img src="radahn.jpg"></div>
+            <div class="content">
+                <h2 id="radahn-name">Starscourge Radahn</h2>
+                <p id="radahn-desc">"I am Radahn, the Starscourge. And I will not allow the stars to move." <br><br> The mightiest demigod of the Shattering, General Radahn learned gravity magic in Sellia so he could continue to ride his beloved horse, Leonard. He is famous for challenging the stars themselves and halting their movement to protect the world. Even after losing his mind to the Scarlet Rot, he continues to hold the very fate of the cosmos in place.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="character-section artorias-section">
+        <div class="container">
+            <div class="character-image"><img src="artorias.jpg"></div>
+            <div class="content">
+                <h2 id="artorias-name">Artorias the Abysswalker</h2>
+                <p id="artorias-desc">"Thou shalt perish in the darkness..." <br><br> Sir Artorias was one of the four legendary Knights of Gwyn. He ventured into Oolacile to face the spreading Abyss. In a final act of heroism, he gave his protective shield to his companion Sif, leaving his own left arm to be shattered. Though the Abyss eventually consumed his soul, his sacrifice delayed the fall of the world into shadow.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="character-section sif-section">
+        <div class="container reverse">
+            <div class="character-image"><img src="sif.jpg"></div>
+            <div class="content">
+                <h2 id="sif-name">Great Grey Wolf Sif</h2>
+                <p id="sif-desc">The Great Grey Wolf Sif is the eternal guardian of Artorias' grave. Having survived the Abyss thanks to his master's sacrifice, Sif grew to a colossal size. He wields Artorias' Greatsword in his mouth, fighting with a tragic elegance. Sif does not fight out of malice, but to prevent any other adventurer from suffering the same dark fate that claimed his beloved friend.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ... (Dil değiştirme fonksiyonu) ...
+        let currentLang = 'en';
+        const translations = {
+            en: {
+                home: "BACK TO PORTAL", gallery: "GALLERY", about: "ABOUT",
+                maleniaName: "Malenia, Blade of Miquella",
+                maleniaDesc: '"I am Malenia, Blade of Miquella. And I have never known defeat." <br><br> Born as a twin to Miquella, Malenia is cursed with the Scarlet Rot from within. Despite her decaying body, she became the most fearsome swordswoman in the Lands Between, wielding her prosthetic golden blade with unmatched grace.',
+                radahnName: "Starscourge Radahn",
+                radahnDesc: '"I am Radahn, the Starscourge. And I will not allow the stars to move." <br><br> The mightiest demigod of the Shattering, General Radahn learned gravity magic in Sellia so he could continue to ride his beloved horse, Leonard. He is famous for challenging the stars themselves and halting their movement.',
+                artoriasName: "Artorias the Abysswalker",
+                artoriasDesc: '"Thou shalt perish in the darkness..." <br><br> Sir Artorias was one of the four legendary Knights of Gwyn. He ventured into Oolacile to face the spreading Abyss. In a final act of heroism, he gave his protective shield to his companion Sif.',
+                sifName: "Great Grey Wolf Sif",
+                sifDesc: "The Great Grey Wolf Sif is the eternal guardian of Artorias' grave. Having survived the Abyss thanks to his master's sacrifice, Sif grew to a colossal size. He wields Artorias' Greatsword in his mouth, fighting with a tragic elegance."
+            },
+            tr: {
+                home: "PORTALA DÖN", gallery: "GALERİ", about: "HAKKIMDA",
+                maleniaName: "Malenia, Miquella'nın Kılıcı",
+                maleniaDesc: '"Ben Malenia\'yım, Miquella\'nın kılıcıyım. Ve ben hiç yenilgi tatmadım." <br><br> Miquella\'nın ikizi olarak doğan Malenia, içeriden gelen Kızıl Çürüme ile lanetlenmiştir. Çürüyen vücuduna rağmen, altın protez kılıcını eşsiz bir zarafetle kullanarak Aralarındaki Diyar\'ın en korkunç savaşçısı oldu.',
+                radahnName: "Yıldızların Felaketi Radahn",
+                radahnDesc: '"Ben Radahn\'ım, Yıldızların Felaketi. Ve yıldızların hareket etmesine izin vermeyeceğim." <br><br> Parçalanma\'nın en güçlü yarı tanrısı olan General Radahn, sevgili atı Leonard\'a binmeye devam edebilmek için yerçekimi büyüsü öğrendi. Yıldızlara meydan okuması ve dünyayı korumak için onları durdurmasıyla ünlüdür.',
+                artoriasName: "Abyss Yürüyen Artorias",
+                artoriasDesc: '"Karanlıkta yok olacaksın..." <br><br> Sir Artorias, Güneş Lordu Gwyn\'in dört efsanevi şövalyesinden biriydi. Yayılan Abyss ile yüzleşmek için Oolacile\'e gitti. Kahramanlığının son eyleminde, kalkanını dostu Sif\'e vererek sol kolunun parçalanmasına izin verdi.',
+                sifName: "Büyük Gri Kurt Sif",
+                sifDesc: "Büyük Gri Kurt Sif, Artorias'ın mezarının ebedi koruyucusudur. Efendisinin fedakarlığı sayesinde Abyss'ten sağ kurtulan Sif, yüzyıllar içinde devasa bir boyuta ulaştı. Ağzında Artorias'ın Ulu Kılıcı'nı taşıyarak trajik bir zarafetle dövüşür."
+            }
+        };
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'tr' : 'en';
+            document.getElementById('nav-home').innerText = translations[currentLang].home;
+            document.getElementById('nav-gallery').innerText = translations[currentLang].gallery;
+            document.getElementById('nav-about').innerText = translations[currentLang].about;
+            document.getElementById('malenia-name').innerText = translations[currentLang].maleniaName;
+            document.getElementById('malenia-desc').innerHTML = translations[currentLang].maleniaDesc;
+            document.getElementById('radahn-name').innerText = translations[currentLang].radahnName;
+            document.getElementById('radahn-desc').innerHTML = translations[currentLang].radahnDesc;
+            document.getElementById('artorias-name').innerText = translations[currentLang].artoriasName;
+            document.getElementById('artorias-desc').innerHTML = translations[currentLang].artoriasDesc;
+            document.getElementById('sif-name').innerText = translations[currentLang].sifName;
+            document.getElementById('sif-desc').innerHTML = translations[currentLang].sifDesc;
+        }
+    </script>
+</body>
+</html>

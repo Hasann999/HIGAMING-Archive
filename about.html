@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HIGAMING Archive | About Hasan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0; padding: 0;
+            background-color: #000;
+            /* Arka plan görselini ekledik ve soluklaştırmak için linear-gradient kullandık */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('aboutbg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #fff;
+            font-family: 'Cormorant Garamond', serif;
+            display: flex; 
+            flex-direction: column; 
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        nav { 
+            text-align: center; 
+            padding: 40px 0;
+            z-index: 10;
+        }
+        nav a { 
+            font-family: 'Cinzel', serif; color: #fff; text-decoration: none; 
+            margin: 0 25px; font-size: 0.9rem; letter-spacing: 3px; transition: 0.3s; 
+        }
+        nav a:hover { color: #888; text-shadow: 0 0 10px rgba(255,255,255,0.5); }
+
+        .main-wrapper {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center; 
+            padding: 0 15%;
+            text-align: center;
+        }
+
+        header h1 { 
+            font-family: 'Cinzel', serif; 
+            letter-spacing: 15px; 
+            color: rgba(255, 255, 255, 0.7); 
+            font-size: 3.5rem; 
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        .text-box {
+            max-width: 1000px;
+            padding: 20px;
+        }
+
+        .text-box p {
+            font-size: 2.5rem; /* Yazıyı daha vurucu ve uyumlu yaptık */
+            line-height: 1.4;
+            font-style: italic;
+            color: #ffffff;
+            margin: 0;
+            font-weight: 400;
+            text-shadow: 2px 2px 15px rgba(0,0,0,1); /* Okunabilirlik için gölge */
+        }
+
+        #translate-btn { 
+            position: fixed; top: 25px; right: 25px; padding: 12px 20px; 
+            background: rgba(0,0,0,0.85); border: 1px solid rgba(255,255,255,0.3); 
+            color: #fff; cursor: pointer; z-index: 100; font-family: 'Cinzel';
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+        #translate-btn:hover { background: #fff; color: #000; }
+
+        footer { 
+            padding: 30px; 
+            font-family: 'Cinzel'; 
+            font-size: 0.8rem; 
+            color: rgba(255,255,255,0.2); 
+            text-align: center;
+            letter-spacing: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="translate-btn" onclick="toggleLanguage()">TR / EN</button>
+
+    <nav>
+        <a href="index.html">BACK TO PORTAL</a>
+        <a href="gallery.html">GALLERY</a>
+        <a href="about.html">ABOUT</a>
+    </nav>
+
+    <div class="main-wrapper">
+        <header>
+            <h1 id="page-title">The Creator</h1>
+        </header>
+        
+        <div class="text-box">
+            <p id="about-text">
+                "Hello, I'm Hasan. I'm 23 years old. Welcome to my little project, which is the result of combining my drawing hobby with my passion for gaming."
+            </p>
+        </div>
+    </div>
+
+    <footer>© 2026 HIGAMING ARCHIVE</footer>
+
+    <script>
+        let currentLang = 'en';
+        const translations = {
+            en: {
+                title: "The Creator",
+                text: '"Hello, I\'m Hasan. I\'m 23 years old. Welcome to my little project, which is the result of combining my drawing hobby with my passion for gaming."'
+            },
+            tr: {
+                title: "Yaratıcı",
+                text: '"Selam, ben Hasan. 23 yaşındayım ve şu an hobi olarak yaptığım çizimle oyun oynamanın birleşmesi sonucu yaptığım ufak projeme hoş geldiniz."'
+            }
+        };
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'tr' : 'en';
+            document.getElementById('page-title').innerText = translations[currentLang].title;
+            document.getElementById('about-text').innerText = translations[currentLang].text;
+        }
+    </script>
+</body>
+</html>

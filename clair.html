@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HIGAMING Archive | Clair Obscur</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Lora:ital,wght@0,400;1,500&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0; padding: 0;
+            background-color: #000;
+            color: #FFF5B7;
+            font-family: 'Lora', serif;
+            overflow-x: hidden;
+        }
+
+        header { text-align: center; padding: 60px 20px; }
+        header h1 { 
+            font-family: 'Pinyon Script', cursive; 
+            color: #FFF5B7; 
+            font-size: 5rem; 
+            margin: 0;
+            text-shadow: 0 0 15px rgba(255, 245, 183, 0.3);
+        }
+
+        nav { text-align: center; margin-bottom: 30px; }
+        nav a { font-family: 'Cinzel', serif; color: #fff; text-decoration: none; margin: 0 25px; font-size: 0.9rem; letter-spacing: 2px; transition: 0.3s; }
+        nav a:hover { color: #FFF5B7; }
+
+        .character-section {
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .maelle-section { background-image: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('maellebg.jpg'); }
+        .alicia-section { background-image: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('aliciabg.jpg'); }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 700px;
+            padding: 40px 10%;
+            max-width: 1400px;
+            margin: 0 auto;
+            gap: 80px;
+        }
+
+        .content { flex: 1.2; }
+        .character-image { flex: 1; display: flex; justify-content: center; }
+
+        .content h2 { 
+            font-family: 'Pinyon Script', cursive; 
+            font-size: 4.5rem; 
+            margin-bottom: 20px; 
+        }
+
+        .content p { 
+            line-height: 2; 
+            font-size: 1.3rem; 
+            text-align: justify; 
+            font-style: italic;
+        }
+
+        .maelle-theme { color: #FF6347; }
+        .alicia-theme { color: #E0E0E0; }
+
+        .character-image img {
+            width: 500px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 1);
+        }
+
+        #translate-btn { 
+            position: fixed; top: 20px; right: 20px; padding: 10px 18px; 
+            background: rgba(0,0,0,0.6); border: 1px solid #FFF5B7; 
+            color: #FFF5B7; cursor: pointer; z-index: 100; font-family: 'Cinzel'; 
+        }
+    </style>
+</head>
+<body>
+
+    <button id="translate-btn" onclick="toggleLanguage()">TR / EN</button>
+
+    <header>
+        <h1 id="main-title">Clair Obscur</h1>
+    </header>
+
+    <nav>
+    <a href="index.html" id="nav-home">BACK TO PORTAL</a>
+    <a href="gallery.html" id="nav-gallery">GALLERY</a>
+    <a href="about.html" id="nav-about">ABOUT</a>
+</nav>
+
+    <div class="character-section maelle-section">
+        <div class="container">
+            <div class="character-image">
+                <img src="maelle.jpg" alt="Maelle">
+            </div>
+            <div class="content maelle-theme">
+                <h2 id="maelle-name">Maelle</h2>
+                <p id="maelle-desc">
+                    Maelle, as one of the most determined and elegant members of Expedition 33, sets out to save the world that the Paintress erases every year. Her relentless fighting style, combined with her grace, makes her an indispensable part of the group. While seeking her own destiny, Maelle must face the shadows of the past, carrying the last light of hope. Every step she takes represents the cry and the will to survive of a people doomed to be erased. She is not just a warrior, but a rare golden symbol shining in the darkness.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="character-section alicia-section">
+        <div class="container">
+            <div class="character-image">
+                <img src="alicia.jpg" alt="Alicia">
+            </div>
+            <div class="content alicia-theme">
+                <h2 id="alicia-name">Alicia</h2>
+                <p id="alicia-desc">
+                    Alicia is known as one of the most mysterious and powerful figures of Expedition 33; her mastery is hidden not only in her weapons but in her strategic intelligence. She is a hero who risks everything to break the unjust cycle imposed on the world by the Paintress. With her silent but effective presence, she provides both strength and guidance to her comrades in difficult times. Her story is an epic narrative of rebirth amidst sacrifice and destruction. Every strike she makes is a decisive step toward bringing back the erased colors of the world.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentLang = 'en';
+        const translations = {
+            en: {
+                title: "Clair Obscur Archive",
+                home: "BACK TO PORTAL", gallery: "GALLERY", about: "ABOUT",
+                maelleName: "Maelle",
+                maelleDesc: "Maelle, as one of the most determined and elegant members of Expedition 33, sets out to save the world that the Paintress erases every year. Her relentless fighting style, combined with her grace, makes her an indispensable part of the group. While seeking her own destiny, Maelle must face the shadows of the past, carrying the last light of hope. Every step she takes represents the cry and the will to survive of a people doomed to be erased. She is not just a warrior, but a rare golden symbol shining in the darkness.",
+                aliciaName: "Alicia",
+                aliciaDesc: "Alicia is known as one of the most mysterious and powerful figures of Expedition 33; her mastery is hidden not only in her weapons but in her strategic intelligence. She is a hero who risks everything to break the unjust cycle imposed on the world by the Paintress. With her silent but effective presence, she provides both strength and guidance to her comrades in difficult times. Her story is an epic narrative of rebirth amidst sacrifice and destruction. Every strike she makes is a decisive step toward bringing back the erased colors of the world."
+            },
+            tr: {
+                title: "Clair Obscur Arşivi",
+                home: "PORTALA DÖN", gallery: "GALERİ", about: "HAKKIMDA",
+                maelleName: "Maelle",
+                maelleDesc: "Maelle, Expedition 33'ün en kararlı ve zarif üyelerinden biri olarak, Paintress'in her yıl sildiği dünyayı kurtarmak için yola çıkıyor. Zarafetiyle birleşen amansız dövüş stili, onu grubun vazgeçilmez bir parçası haline getiriyor. Kendi kaderini ararken geçmişin gölgeleriyle yüzleşmek zorunda kalan Maelle, umudun son ışığını taşıyor. Her adımı, silinmeye mahkum bir halkın hayatta kalma arzusunu temsil ediyor. O sadece bir savaşçı değil, karanlıkta parlayan nadide bir simge.",
+                aliciaName: "Alicia",
+                aliciaDesc: "Alicia, Expedition 33'ün en gizemli ve güçlü figürlerinden biri olarak bilinir; ustalığı sadece silahlarında değil, stratejik zekasında saklıdır. Paintress'in dünyaya dayattığı adaletsiz döngüyü kırmak için her şeyini riske atan bir kahramandır. Sessiz ama etkili varlığıyla yoldaşlarına rehberlik sağlar. Onun hikayesi, yıkımın ortasında yeniden doğuşun destansı bir anlatısıdır. Her vuruşu, dünyanın silinen renklerini geri getirmek için atılan kararlı bir adımdır."
+            }
+        };
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'tr' : 'en';
+            document.getElementById('main-title').innerText = translations[currentLang].title;
+            document.getElementById('nav-home').innerText = translations[currentLang].home;
+            document.getElementById('nav-gallery').innerText = translations[currentLang].gallery;
+            document.getElementById('nav-about').innerText = translations[currentLang].about;
+            document.getElementById('maelle-name').innerText = translations[currentLang].maelleName;
+            document.getElementById('maelle-desc').innerText = translations[currentLang].maelleDesc;
+            document.getElementById('alicia-name').innerText = translations[currentLang].aliciaName;
+            document.getElementById('alicia-desc').innerText = translations[currentLang].aliciaDesc;
+        }
+    </script>
+</body>
+</html>
